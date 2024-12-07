@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* src/index.css */
+@font-face {
+  font-family: "Negita";
+  src: url("/public/fonts/Negita.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.video-back video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  filter: none;
+  opacity: 1;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.video-back::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.2)
+  );
+}
+.nav-items {
+  font-family: "Negita", "sans-serif";
+  font-size: 15px;
+  color: gray;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.nav-items::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  border-radius: 50px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: all 0.3s ease;
+}
+.nav-items:hover {
+  color: black;
+  transition: all 0.3s ease;
+}
+.nav-items:hover::before {
+  color: black;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.dark-nav::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  border-radius: 50px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease;
+}
+.dark-nav:hover {
+  color: white;
+  transition: all 0.3s ease;
+}
+.dark-nav:hover::before {
+  color: white;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.icons {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nav-icons {
+  position: absolute;
+  bottom: -40px;
+  font-size: 10px;
+  font-weight: 600;
+  background-color: black;
+  color: white;
+  padding: 3px 5px;
+  border-radius: 5px;
+  margin: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.icons:hover .nav-icons {
+  bottom: -28px;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.brand-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 900px;
+  overflow: hidden;
+  margin-inline: auto;
+  height: 80px;
+  position: relative;
+  mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1) 30%,
+      rgba(0, 0, 0, 1) 70%,
+      rgba(0, 0, 0, 0)
+  );
+}
+.brand{
+  position: absolute;
+  width: 150px;
+  height: 70px;
+  left: max(calc(150px * 6),100%) ;
+  animation: scroll-left;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes scroll-left {
+  to{
+      left: -150px;
+  }
+}
+.brand2{
+  position: absolute;
+  width: 150px;
+  height: 70px;
+  right: max(calc(150px * 6),100%) ;
+  animation: scroll-right;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes scroll-right {
+  to{
+      right: -150px;
+  }
+}
+.brand-1{
+  animation-delay: calc(10s / 6 * (6 - 1) * -1) ;
+}
+.brand-2{
+  animation-delay:  calc(10s / 6 * (6 - 2) * -1) ;
+}
+.brand-3{
+  animation-delay:  calc(10s / 6 * (6 - 3) * -1) ;
+}
+.brand-4{
+  animation-delay:  calc(10s / 6 * (6 - 4) * -1) ;
+}
+.brand-5{
+  animation-delay:  calc(10s / 6 * (6 - 5) * -1) ;
+}
+.brand-6{
+  animation-delay:  calc(10s / 6 * (6 - 6) * -1) ;
+}
+/* .category-btn.active{
+  background-color: #F2613F;
+} */
+.product-card{
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+.product-card:hover{
+  box-shadow: 0px 0px 10px rgba(253, 110, 0, 0.7);
+  transition: all 0.3s ease;
+}
